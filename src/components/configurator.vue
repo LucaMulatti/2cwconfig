@@ -14,21 +14,20 @@
       id: 1,
       name: 'Configuration 1',
       description: 'Description 1',
-      case: 'https://picsum.photos/500/600?v=1',
+      case: 'src/assets/2cw_0029_Cassa1.png',
       ring: 'https://picsum.photos/200/200?v=1',
     },
     {
       id: 2,
       name: 'Configuration 2',
       description: 'Description 2',
-      case: 'https://picsum.photos/500/600?v=2',
+      case: 'src/assets/2cw_0028_Cassa2.png',
       ring: 'https://picsum.photos/200/200?v=2',
     },
     {
       id: 3,
       name: 'Configuration 3',
       description: 'Description 3',
-      case: 'https://picsum.photos/500/600?v=3',
       ring: 'https://picsum.photos/200/200?v=3',
     },
 
