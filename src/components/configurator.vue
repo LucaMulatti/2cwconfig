@@ -10,8 +10,8 @@ const settings = ref({
 
 const configurations = ref({
   case: [
-    { id: 1, src: new URL('@/assets/2cw_0029_Cassa1.png', import.meta.url).href },
-    { id: 2, src: new URL('@/assets/2cw_0028_Cassa2.png', import.meta.url).href }
+    { id: 1, src: new URL('../assets/2cw_0029_Cassa1.png', import.meta.url).href },
+    { id: 2, src: new URL('../assets/2cw_0028_Cassa2.png', import.meta.url).href }
   ],
   ring: [
     { id: 1, src: new URL('@/assets/2cw_0027_Ghiera1.png', import.meta.url).href },
