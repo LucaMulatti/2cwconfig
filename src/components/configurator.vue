@@ -10,42 +10,42 @@ const settings = ref({
 
 const configurations = ref({
   case: [
-    { id: 1, src: new URL('src/assets/2cw_0029_Cassa1.png', import.meta.url).href },
-    { id: 2, src: new URL('../assets/2cw_0028_Cassa2.png', import.meta.url).href }
+    { id: 1, src: '/assets/2cw_0029_Cassa1.png' },
+    { id: 2, src: '/assets/2cw_0028_Cassa2.png' }
   ],
   ring: [
-    { id: 1, src: new URL('@/assets/2cw_0027_Ghiera1.png', import.meta.url).href },
-    { id: 2, src: new URL('@/assets/2cw_0026_Ghiera2.png', import.meta.url).href },
-    { id: 3, src: new URL('@/assets/2cw_0025_Ghiera3.png', import.meta.url).href },
-    { id: 4, src: new URL('@/assets/2cw_0024_Ghiera4.png', import.meta.url).href },
-    { id: 5, src: new URL('@/assets/2cw_0023_Ghiera5.png', import.meta.url).href },
-    { id: 6, src: new URL('@/assets/2cw_0022_Ghiera6.png', import.meta.url).href },
-    { id: 7, src: new URL('@/assets/2cw_0021_Ghiera7.png', import.meta.url).href },
-    { id: 8, src: new URL('@/assets/2cw_0020_Ghiera8.png', import.meta.url).href },
-    { id: 9, src: new URL('@/assets/2cw_0019_Ghiera9.png', import.meta.url).href },
-    { id: 10, src: new URL('@/assets/2cw_0018_Ghiera10.png', import.meta.url).href },
-    { id: 11, src: new URL('@/assets/2cw_0017_Ghiera11.png', import.meta.url).href },
-    { id: 12, src: new URL('@/assets/2cw_0016_Ghiera12.png', import.meta.url).href },
-    { id: 13, src: new URL('@/assets/2cw_0015_Ghiera13.png', import.meta.url).href },
-    { id: 14, src: new URL('@/assets/2cw_0014_Ghiera14.png', import.meta.url).href },
-    { id: 15, src: new URL('@/assets/2cw_0013_Ghiera15.png', import.meta.url).href }
+    { id: 1, src: '/assets/2cw_0027_Ghiera1.png' },
+    { id: 2, src: '/assets/2cw_0026_Ghiera2.png' },
+    { id: 3, src: '/assets/2cw_0025_Ghiera3.png' },
+    { id: 4, src: '/assets/2cw_0024_Ghiera4.png' },
+    { id: 5, src: '/assets/2cw_0023_Ghiera5.png' },
+    { id: 6, src: '/assets/2cw_0022_Ghiera6.png' },
+    { id: 7, src: '/assets/2cw_0021_Ghiera7.png' },
+    { id: 8, src: '/assets/2cw_0020_Ghiera8.png' },
+    { id: 9, src: '/assets/2cw_0019_Ghiera9.png' },
+    { id: 10, src: '/assets/2cw_0018_Ghiera10.png' },
+    { id: 11, src: '/assets/2cw_0017_Ghiera11.png' },
+    { id: 12, src: '/assets/2cw_0016_Ghiera12.png' },
+    { id: 13, src: '/assets/2cw_0015_Ghiera13.png' },
+    { id: 14, src: '/assets/2cw_0014_Ghiera14.png' },
+    { id: 15, src: '/assets/2cw_0013_Ghiera15.png' }
   ],
   bezel: [
-    { id: 1, src: new URL('@/assets/2cw_0012_Quadrante1.png', import.meta.url).href },
-    { id: 2, src: new URL('@/assets/2cw_0011_Quadrante2.png', import.meta.url).href },
-    { id: 3, src: new URL('@/assets/2cw_0010_Quadrante3.png', import.meta.url).href }
+    { id: 1, src: '/assets/2cw_0012_Quadrante1.png' },
+    { id: 2, src: '/assets/2cw_0011_Quadrante2.png' },
+    { id: 3, src: '/assets/2cw_0010_Quadrante3.png' }
   ],
   dial: [
-    { id: 1, src: new URL('@/assets/2cw_0009_Lancette1.png', import.meta.url).href },
-    { id: 2, src: new URL('@/assets/2cw_0008_Lancette2.png', import.meta.url).href },
-    { id: 3, src: new URL('@/assets/2cw_0007_Lancette3.png', import.meta.url).href },
-    { id: 4, src: new URL('@/assets/2cw_0006_Lancette4.png', import.meta.url).href },
-    { id: 5, src: new URL('@/assets/2cw_0005_Lancette5.png', import.meta.url).href },
-    { id: 6, src: new URL('@/assets/2cw_0004_Lancette6.png', import.meta.url).href },
-    { id: 7, src: new URL('@/assets/2cw_0003_Lancette7.png', import.meta.url).href },
-    { id: 8, src: new URL('@/assets/2cw_0002_Lancette8.png', import.meta.url).href },
-    { id: 9, src: new URL('@/assets/2cw_0001_Lancette9.png', import.meta.url).href },
-    { id: 10, src: new URL('@/assets/2cw_0000_Lancette10.png', import.meta.url).href }
+    { id: 1, src: '/assets/2cw_0009_Lancette1.png' },
+    { id: 2, src: '/assets/2cw_0008_Lancette2.png' },
+    { id: 3, src: '/assets/2cw_0007_Lancette3.png' },
+    { id: 4, src: '/assets/2cw_0006_Lancette4.png' },
+    { id: 5, src: '/assets/2cw_0005_Lancette5.png' },
+    { id: 6, src: '/assets/2cw_0004_Lancette6.png' },
+    { id: 7, src: '/assets/2cw_0003_Lancette7.png' },
+    { id: 8, src: '/assets/2cw_0002_Lancette8.png' },
+    { id: 9, src: '/assets/2cw_0001_Lancette9.png' },
+    { id: 10, src: '/assets/2cw_0000_Lancette10.png' }
   ]
 });
 
