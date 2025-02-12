@@ -5,7 +5,7 @@ import ConfiguratorLayer from './configurator-layer.vue';
 const settings = ref({
   layerWidth: 500,
   layerHeight: 600,
-  debug: true,
+  debug: false,
 });
 
 const configurations = ref({
@@ -83,7 +83,7 @@ provide('configuration', configuration);
      :style="{ backgroundColor: backgroundColor }"
      :class="{ 'debug': settings.debug }">
     <pre v-if="settings.debug">{{ configuration }}</pre>
-    <h1>Configurator</h1>
+    <h1>SEASUB</h1>
     <div class="layers" :style="{ width: settings.layerWidth + 'px', height: settings.layerHeight + 'px' }">
       <ConfiguratorLayer name="case" />    
       <ConfiguratorLayer name="bezel" />
@@ -93,7 +93,7 @@ provide('configuration', configuration);
     <nav class="navbar">
       <button v-for="(level, index) in levels" :key="index" @click="selectedLevel = level"
         :class="{ active: selectedLevel === level }">
-        {{ level }}
+        {{ ['Cassa', 'Quadrante', 'Ghiera', 'Lancette'][index] }}
       </button>
     </nav>
     <div class="controls">
@@ -115,7 +115,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+h1 {
+  font-size: 3rem; /* Dimensione del testo */
+  font-weight: 600; /* Testo in grassetto */
+  font-family: "Inter", sans-serif; /* Cambia font */
+  color: white; /* Testo bianco */
+  text-align: center; /* Centra il testo */
+  text-transform: uppercase; /* Maiuscolo */
+  letter-spacing: 2px; /* Spaziatura tra le lettere */
+  margin-bottom: 20px; /* Spazio sotto */
+  padding-right: 1.5rem;
+}
+
 .configurator {
+  width: 100vw;
+  height: 100vh;
+  background-color: #21002E;
   padding: 0;
   margin: 0;
   .layers {
@@ -140,16 +158,22 @@ export default {
     gap: 10px;
     margin-bottom: 20px;
   }
-  .navbar button {
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    background: #ddd;
-    font-size: 16px;
-  }
+.navbar button {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: "Inter", serif;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 1rem;
+}
   .navbar button.active {
-    background: #333;
-    color: white;
+  opacity: 1;
   }
   .controls {
     display: flex;
@@ -158,11 +182,18 @@ export default {
     margin-top: 20px;
   }
   .controls button {
-    padding: 10px;
-    background: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
+    background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Inter", serif;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  padding: 1rem;
   }
 }
 </style>
