@@ -50,19 +50,17 @@ const configurations = ref({
 });
 
 const configuration = ref({
-  case: configurations.value.case.length > 0 ? configurations.value.case[0].id : null,
-  ring: configurations.value.ring.length > 0 ? configurations.value.ring[0].id : null,
-  bezel: configurations.value.bezel.length > 0 ? configurations.value.bezel[0].id : null,
-  dial: configurations.value.dial.length > 0 ? configurations.value.dial[0].id : null
+  case: configurations.value.case[0]?.id || null,
+  ring: configurations.value.ring[0]?.id || null,
+  bezel: configurations.value.bezel[0]?.id || null,
+  dial: configurations.value.dial[0]?.id || null
 });
 
 const setLayer = (layer, direction) => {
   const items = configurations.value[layer];
   if (!items || items.length === 0) return;
   const currentIndex = items.findIndex(item => item.id === configuration.value[layer]);
-  let newIndex = currentIndex + direction;
-  if (newIndex >= items.length) newIndex = 0;
-  if (newIndex < 0) newIndex = items.length - 1;
+  let newIndex = (currentIndex + direction + items.length) % items.length;
   configuration.value[layer] = items[newIndex].id;
 };
 
@@ -73,41 +71,48 @@ onMounted(() => {
   }
 });
 
+
+
 provide('settings', settings);
 provide('configurations', configurations);
 provide('configuration', configuration);
 </script>
 
 <template>
-  <div class="container configurator d-flex flex-column align-items-center justify-content-center" :class="{ 'debug': settings.debug }">
+  <div class="container configurator d-flex flex-column align-items-center justify-content-center" 
+     :style="{ backgroundColor: backgroundColor }"
+     :class="{ 'debug': settings.debug }">
     <pre v-if="settings.debug">{{ configuration }}</pre>
     <h1>Configurator</h1>
     <div class="layers" :style="{ width: settings.layerWidth + 'px', height: settings.layerHeight + 'px' }">
-      <ConfiguratorLayer name="ring" />  
       <ConfiguratorLayer name="case" />    
       <ConfiguratorLayer name="bezel" />
+      <ConfiguratorLayer name="ring" />  
       <ConfiguratorLayer name="dial" />
     </div>
+    <nav class="navbar">
+      <button v-for="(level, index) in levels" :key="index" @click="selectedLevel = level"
+        :class="{ active: selectedLevel === level }">
+        {{ level }}
+      </button>
+    </nav>
     <div class="controls">
-      <div class="control case">
-        <button @click="setLayer('case', -1)">Prev</button>
-        <button @click="setLayer('case', 1)">Next</button>
-      </div>
-      <div class="control ring">
-        <button @click="setLayer('ring', -1)">Prev</button>
-        <button @click="setLayer('ring', 1)">Next</button>
-      </div>
-      <div class="control bezel">
-        <button @click="setLayer('bezel', -1)">Prev</button>
-        <button @click="setLayer('bezel', 1)">Next</button>
-      </div>
-      <div class="control dial">
-        <button @click="setLayer('dial', -1)">Prev</button>
-        <button @click="setLayer('dial', 1)">Next</button>
-      </div>
+      <button @click="setLayer(selectedLevel, -1)">Prev</button>
+      <button @click="setLayer(selectedLevel, 1)">Next</button>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      levels: ["case", "bezel", "ring", "dial"],
+      selectedLevel: "case"
+    };
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .configurator {
@@ -122,41 +127,42 @@ provide('configuration', configuration);
       height: 100%;
       display: flex;
       transition: transform 0.5s ease-in-out;
-      .controls {
-        position: absolute;
-        bottom: -50px;
-        width: 100%;
-        text-align: center;
-      }
-      &.ring {
-        z-index: 3;
-      }
-      &.case {
-        z-index: 2;
-      }
-      &.bezel {
-        z-index: 1;
-      }
-      &.dial {
-        z-index: 0;
-      }
+      &.case { z-index: 0; }
+      &.bezel { z-index: 1; }
+      &.ring { z-index: 2; }
+      &.dial { z-index: 3; }
     }
   }
 
-  &.debug {
-    border: 1px solid blue;
-    .layers {
-      overflow: visible;
-      .layer {
-        border: 1px solid red;
-        &.ring img, &.bezel img, &.dial img {
-          opacity: 0.5;
-        }
-      }
-    }
-    .controls {
-      border: 1px solid green;
-    }
+  .navbar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .navbar button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background: #ddd;
+    font-size: 16px;
+  }
+  .navbar button.active {
+    background: #333;
+    color: white;
+  }
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .controls button {
+    padding: 10px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
   }
 }
 </style>

@@ -52,28 +52,30 @@ const selectedIndex = computed(() => {
   position: absolute;
   width: 100%;
   height: 100%;
+  display: flex;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 1; /* Imposta sempre visibile */
 }
 
 /* L'immagine attiva è visibile al centro */
 .layer.active {
   transform: translateX(0);
   opacity: 1;
-  z-index: 2;
+  z-index: 3;
 }
 
 /* L'immagine precedente si sposta a sinistra */
 .layer.prev {
   transform: translateX(-100%);
-  opacity: 0;
-  z-index: 1;
+  opacity: 1; /* Mantieni visibile */
+  z-index: 2;
 }
 
 /* L'immagine successiva si sposta a destra */
 .layer.next {
   transform: translateX(100%);
-  opacity: 0;
-  z-index: 1;
+  opacity: 1; /* Mantieni visibile */
+  z-index: 2;
 }
 
 /* Evita che le immagini si stirino */
