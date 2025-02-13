@@ -3,8 +3,8 @@ import { ref, onMounted, provide } from 'vue';
 import ConfiguratorLayer from './configurator-layer.vue';
 
 const settings = ref({
-  layerWidth: 500,
-  layerHeight: 600,
+  layerWidth: 375,
+  layerHeight: 450,
   debug: false,
 });
 
@@ -83,6 +83,7 @@ provide('configuration', configuration);
      :style="{ backgroundColor: backgroundColor }"
      :class="{ 'debug': settings.debug }">
     <pre v-if="settings.debug">{{ configuration }}</pre>
+    <img src="/assets/logo.svg" alt="Logo" class="logo" />
     <h1>SEASUB</h1>
     <div class="layers" :style="{ width: settings.layerWidth + 'px', height: settings.layerHeight + 'px' }">
       <ConfiguratorLayer name="case" />    
@@ -97,8 +98,10 @@ provide('configuration', configuration);
       </button>
     </nav>
     <div class="controls">
-      <button @click="setLayer(selectedLevel, -1)">Prev</button>
-      <button @click="setLayer(selectedLevel, 1)">Next</button>
+      <button @click="setLayer(selectedLevel, -1)"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="ai ai-ArrowLeft"><path d="M11 5l-7 7 7 7"/><path d="M4 12h16"/></svg>
+      </button>
+      <button @click="setLayer(selectedLevel, 1)"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="ai ai-ArrowRight"><path d="M4 12h16"/><path d="M13 5l7 7-7 7"/></svg>
+      </button>
     </div>
   </div>
 </template>
@@ -119,15 +122,22 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 h1 {
-  font-size: 3rem; /* Dimensione del testo */
+  font-size: 2.7rem; /* Dimensione del testo */
   font-weight: 600; /* Testo in grassetto */
   font-family: "Inter", sans-serif; /* Cambia font */
   color: white; /* Testo bianco */
   text-align: center; /* Centra il testo */
   text-transform: uppercase; /* Maiuscolo */
   letter-spacing: 2px; /* Spaziatura tra le lettere */
-  margin-bottom: 20px; /* Spazio sotto */
+  margin-bottom: 4rem; /* Spazio sotto */
   padding-right: 1.5rem;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+  padding-right: 1.5rem;
+  opacity: .5;
 }
 
 .configurator {
@@ -139,6 +149,7 @@ h1 {
   .layers {
     position: relative;
     overflow: hidden;
+    margin-bottom: 4rem;
     .layer {
       position: absolute;
       width: 100%;
@@ -169,7 +180,7 @@ h1 {
   transition: all 0.3s ease-in-out;
   color: white;
   cursor: pointer;
-  opacity: 0.7;
+  opacity: 0.5;
   padding: 1rem;
 }
   .navbar button.active {
@@ -180,6 +191,7 @@ h1 {
     justify-content: center;
     gap: 10px;
     margin-top: 20px;
+    padding-right: 1rem;
   }
   .controls button {
     background: none;
