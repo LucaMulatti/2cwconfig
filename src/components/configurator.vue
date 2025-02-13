@@ -2,6 +2,12 @@
 import { ref, onMounted, provide } from 'vue';
 import ConfiguratorLayer from './configurator-layer.vue';
 
+const backgroundColor = ref('#21002E');
+
+onMounted(() => {
+  document.body.style.backgroundColor = backgroundColor.value;
+});
+
 const settings = ref({
   layerWidth: 375,
   layerHeight: 450,
@@ -80,12 +86,12 @@ provide('configuration', configuration);
 
 <template>
   <div class="container configurator d-flex flex-column align-items-center justify-content-center" 
-     :style="{ backgroundColor: backgroundColor }"
      :class="{ 'debug': settings.debug }">
     <pre v-if="settings.debug">{{ configuration }}</pre>
     <img src="/assets/logo.svg" alt="Logo" class="logo" />
     <h1>SEASUB</h1>
     <div class="layers" :style="{ width: settings.layerWidth + 'px', height: settings.layerHeight + 'px' }">
+      <img src="/assets/Glow.png" alt="Logo" class="glow" />
       <ConfiguratorLayer name="case" />    
       <ConfiguratorLayer name="bezel" />
       <ConfiguratorLayer name="ring" />  
@@ -140,10 +146,21 @@ h1 {
   opacity: .5;
 }
 
+.glow {
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
+  z-index: 0;
+  padding-right: 4rem;
+}
+
 .configurator {
   width: 100vw;
   height: 100vh;
-  background-color: #21002E;
   padding: 0;
   margin: 0;
   .layers {
@@ -167,7 +184,6 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 20px;
   }
 .navbar button {
   background: none;
@@ -190,7 +206,6 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
     padding-right: 1rem;
   }
   .controls button {
