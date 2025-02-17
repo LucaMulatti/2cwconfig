@@ -6,9 +6,7 @@ const backgroundColor = ref('#21002E');
 
 onMounted(() => {
   document.body.style.backgroundColor = backgroundColor.value;
-  document.documentElement.style.height = '100vh';
-  document.body.style.height = '100vh';
-  document.body.style.overflow = 'hidden';
+
 });
 
 const settings = ref({
@@ -186,10 +184,13 @@ h1 {
 }
 
 .configurator {
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuisce logo, layers e controls */
+  align-items: center;
   height: 100vh;
-  padding: 0;
-  margin: 0;
+  width: 100vw;
+  padding: 20px 0;
   .layers {
     position: relative;
     overflow: hidden;
@@ -277,6 +278,8 @@ h1 {
     justify-content: center;
     gap: 10px;
     padding-right: 1rem;
+    font-size: 0.9rem;
+    min-width: 50px;
 
     @media screen and (max-width: 768px) {
     font-size: 0.9rem;
@@ -296,9 +299,16 @@ h1 {
   color: white;
   cursor: pointer;
   padding: 1rem;
+  width: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  width: 5rem;
 
   @media screen and (max-width: 768px) {
-    width: 6px;
+    width: 5rem;
   }
 
   @media screen and (max-width: 480px) {
@@ -307,12 +317,25 @@ h1 {
   }
 }
 
-@media screen and (max-width: 768px) {
+.controls button svg {
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.glow {
+    height: 100%; /* Mantiene l'altezza del contenitore su mobile */
+    width: auto; /* Mantiene le proporzioni */
+    max-width: 100%; /* Evita che esca dal contenitore */
+    object-fit: cover; /* Assicura il riempimento senza distorsione */
+  }
+
+@media screen and (min-width: 768px) {
   .glow {
     height: 100%; /* Mantiene l'altezza del contenitore su mobile */
     width: auto; /* Mantiene le proporzioni */
     max-width: 100%; /* Evita che esca dal contenitore */
     object-fit: cover; /* Assicura il riempimento senza distorsione */
+    padding-left: 7rem;
   }
 }
 </style>
