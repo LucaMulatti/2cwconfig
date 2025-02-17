@@ -6,6 +6,9 @@ const backgroundColor = ref('#21002E');
 
 onMounted(() => {
   document.body.style.backgroundColor = backgroundColor.value;
+  document.documentElement.style.height = '100vh';
+  document.body.style.height = '100vh';
+  document.body.style.overflow = 'hidden';
 });
 
 const settings = ref({
