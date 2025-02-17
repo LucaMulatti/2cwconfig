@@ -327,7 +327,6 @@ h1 {
     width: auto; /* Mantiene le proporzioni */
     max-width: 100%; /* Evita che esca dal contenitore */
     object-fit: cover; /* Assicura il riempimento senza distorsione */
-    padding-right: 1rem;
   }
 
 @media screen and (min-width: 768px) {
