@@ -206,6 +206,12 @@ h1 {
       &.dial { z-index: 3; }
     }
   }
+  
+  @media screen and (max-width: 768px) {
+  .layers {
+    margin-bottom: 1rem;
+  }
+}
 
 
   .navbar {
