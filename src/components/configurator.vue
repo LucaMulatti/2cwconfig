@@ -282,7 +282,7 @@ h1 {
   }
 
      @media screen and (max-width: 480px) {
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
   }
 
   }
