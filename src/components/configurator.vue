@@ -305,7 +305,7 @@ h1 {
   justify-content: center;
   min-width: 40px;
   min-height: 40px;
-  width: 5rem;
+  width: 6rem;
 
   @media screen and (max-width: 768px) {
     width: 5rem;
