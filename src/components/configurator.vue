@@ -104,9 +104,9 @@ provide('configuration', configuration);
       </button>
     </nav>
     <div class="controls">
-      <button @click="setLayer(selectedLevel, -1)"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="ai ai-ArrowLeft"><path d="M11 5l-7 7 7 7"/><path d="M4 12h16"/></svg>
+      <button @click="setLayer(selectedLevel, -1)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="ai ai-ArrowLeft"><path d="M11 5l-7 7 7 7"/><path d="M4 12h16"/></svg>
       </button>
-      <button @click="setLayer(selectedLevel, 1)"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="ai ai-ArrowRight"><path d="M4 12h16"/><path d="M13 5l7 7-7 7"/></svg>
+      <button @click="setLayer(selectedLevel, 1)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="ai ai-ArrowRight"><path d="M4 12h16"/><path d="M13 5l7 7-7 7"/></svg>
       </button>
     </div>
   </div>
@@ -137,13 +137,34 @@ h1 {
   letter-spacing: 2px; /* Spaziatura tra le lettere */
   margin-bottom: 4rem; /* Spazio sotto */
   padding-right: 1.5rem;
+
+  /* Regola per schermi più piccoli (mobile) */
+  @media screen and (max-width: 768px) {
+    font-size: 2.3rem; /* Riduci il font per i dispositivi mobili */
+    margin-bottom: 3.5rem;
+  }
+
+  /* Regola per smartphone molto piccoli */
+  @media screen and (max-width: 480px) {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
 }
 
 .logo {
   width: 150px;
   margin-bottom: 20px;
+  margin-top: 20px;
   padding-right: 1.5rem;
   opacity: .5;
+
+  @media screen and (max-width: 768px) {
+    width: 125px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 100px;
+  }
 }
 
 .glow {
@@ -180,11 +201,39 @@ h1 {
     }
   }
 
+
   .navbar {
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
   }
+
+  @media screen and (max-width: 768px) {
+  .navbar {
+    display: inline-flex; /* Mantiene tutto su una riga */
+    overflow-x: auto; /* Abilita lo scroll orizzontale */
+    flex-wrap: nowrap; /* Evita che gli elementi vadano a capo */
+    white-space: nowrap; /* Evita il wrapping del testo */
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+    -webkit-overflow-scrolling: touch; /* Scrolling fluido su mobile */
+    scroll-behavior: smooth; /* Rende lo scroll più fluido */
+    padding-left: 9rem;
+    gap: 4px;
+  }
+
+  /* Aggiungi overflow anche al body se necessario */
+  body {
+    overflow-x: auto;
+  }
+
+  /* Nasconde la scrollbar su mobile */
+  .navbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .navbar button {
   background: none;
   border: none;
@@ -198,6 +247,14 @@ h1 {
   cursor: pointer;
   opacity: 0.5;
   padding: 1rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.4rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 1.3rem;
+  }
 }
   .navbar button.active {
   opacity: 1;
@@ -207,20 +264,35 @@ h1 {
     justify-content: center;
     gap: 10px;
     padding-right: 1rem;
+
+    @media screen and (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+
+     @media screen and (max-width: 480px) {
+    margin-bottom: 3rem;
+  }
+
   }
   .controls button {
     background: none;
   border: none;
   box-shadow: none;
-  padding: 0;
   font-size: 1rem;
-  font-weight: 500;
-  font-family: "Inter", serif;
   transition: all 0.3s ease-in-out;
   color: white;
   cursor: pointer;
-  opacity: 1;
   padding: 1rem;
+
+  @media screen and (max-width: 768px) {
+    width: 6px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 5rem;
+  }
+
+  
   }
 }
 </style>
