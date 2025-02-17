@@ -142,6 +142,7 @@ h1 {
   @media screen and (max-width: 768px) {
     font-size: 2.3rem; /* Riduci il font per i dispositivi mobili */
     margin-bottom: 3.5rem;
+    padding-right: 0rem;
   }
 
   /* Regola per smartphone molto piccoli */
@@ -160,6 +161,7 @@ h1 {
 
   @media screen and (max-width: 768px) {
     width: 125px;
+    padding-right: 0rem;
   }
 
   @media screen and (max-width: 480px) {
@@ -214,6 +216,7 @@ h1 {
   .navbar {
     display: inline-flex; /* Mantiene tutto su una riga */
     overflow-x: auto; /* Abilita lo scroll orizzontale */
+    overflow-y: hidden;
     flex-wrap: nowrap; /* Evita che gli elementi vadano a capo */
     white-space: nowrap; /* Evita il wrapping del testo */
     width: 100%; /* Occupa tutta la larghezza disponibile */
@@ -291,8 +294,15 @@ h1 {
   @media screen and (max-width: 480px) {
     width: 5rem;
   }
+  }
+}
 
-  
+@media screen and (max-width: 768px) {
+  .glow {
+    height: 100%; /* Mantiene l'altezza del contenitore su mobile */
+    width: auto; /* Mantiene le proporzioni */
+    max-width: 100%; /* Evita che esca dal contenitore */
+    object-fit: cover; /* Assicura il riempimento senza distorsione */
   }
 }
 </style>
