@@ -129,24 +129,22 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 h1 {
-  font-size: 2.7rem; /* Dimensione del testo */
-  font-weight: 600; /* Testo in grassetto */
-  font-family: "Inter", sans-serif; /* Cambia font */
-  color: white; /* Testo bianco */
-  text-align: center; /* Centra il testo */
-  text-transform: uppercase; /* Maiuscolo */
-  letter-spacing: 2px; /* Spaziatura tra le lettere */
-  margin-bottom: 4rem; /* Spazio sotto */
+  font-size: 2.7rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4rem;
   padding-right: 1.5rem;
 
-  /* Regola per schermi più piccoli (mobile) */
   @media screen and (max-width: 768px) {
-    font-size: 2.3rem; /* Riduci il font per i dispositivi mobili */
+    font-size: 2.3rem;
     margin-bottom: 3.5rem;
     padding-right: 0rem;
   }
 
-  /* Regola per smartphone molto piccoli */
   @media screen and (max-width: 480px) {
     font-size: 2rem;
     margin-bottom: 3rem;
@@ -186,7 +184,7 @@ h1 {
 .configurator {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribuisce logo, layers e controls */
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
   width: 100vw;
@@ -225,24 +223,22 @@ h1 {
 
   @media screen and (max-width: 768px) {
   .navbar {
-    display: inline-flex; /* Mantiene tutto su una riga */
-    overflow-x: auto; /* Abilita lo scroll orizzontale */
+    display: inline-flex;
+    overflow-x: auto;
     overflow-y: hidden;
-    flex-wrap: nowrap; /* Evita che gli elementi vadano a capo */
-    white-space: nowrap; /* Evita il wrapping del testo */
-    width: 100%; /* Occupa tutta la larghezza disponibile */
-    -webkit-overflow-scrolling: touch; /* Scrolling fluido su mobile */
-    scroll-behavior: smooth; /* Rende lo scroll più fluido */
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
     padding-left: 9rem;
     gap: 4px;
   }
 
-  /* Aggiungi overflow anche al body se necessario */
   body {
     overflow-x: auto;
   }
 
-  /* Nasconde la scrollbar su mobile */
   .navbar::-webkit-scrollbar {
     display: none;
   }
@@ -323,18 +319,18 @@ h1 {
 }
 
 .glow {
-    height: 100%; /* Mantiene l'altezza del contenitore su mobile */
-    width: auto; /* Mantiene le proporzioni */
-    max-width: 100%; /* Evita che esca dal contenitore */
-    object-fit: cover; /* Assicura il riempimento senza distorsione */
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: cover;
   }
 
 @media screen and (min-width: 768px) {
   .glow {
-    height: 100%; /* Mantiene l'altezza del contenitore su mobile */
-    width: auto; /* Mantiene le proporzioni */
-    max-width: 100%; /* Evita che esca dal contenitore */
-    object-fit: cover; /* Assicura il riempimento senza distorsione */
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: cover;
     padding-left: 7rem;
   }
 }
