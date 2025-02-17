@@ -165,6 +165,7 @@ h1 {
   @media screen and (max-width: 768px) {
     width: 125px;
     padding-right: 0rem;
+    margin-bottom: 10px;
   }
 
   @media screen and (max-width: 480px) {
@@ -276,7 +277,7 @@ h1 {
   }
 
      @media screen and (max-width: 480px) {
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
   }
 
   }
