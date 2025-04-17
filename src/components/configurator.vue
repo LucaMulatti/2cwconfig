@@ -247,18 +247,37 @@ const configurations = ref({
 const selectedModel = ref('seasub');
 
 const levelMap = {
-  seasub: ["case", "bezel", "ring", "dial", "strap"],
-  jetlag: ["case", "bezel", "ring", "dial", "strap", "lancetta"],
-  boatking: ["case", "bezel", "ring", "dial", "strap"]
+  seasub: [
+    { key: "case", label: "Cassa" },
+    { key: "bezel", label: "Quadrante" },
+    { key: "ring", label: "Ghiera" },
+    { key: "dial", label: "Lancette" },
+    { key: "strap", label: "Cinturino" }
+  ],
+  jetlag: [
+    { key: "case", label: "Cassa" },
+    { key: "bezel", label: "Quadrante" },
+    { key: "ring", label: "Ghiera" },
+    { key: "dial", label: "Lancette" },
+    { key: "lancetta", label: "Lancetta GMT" },
+    { key: "strap", label: "Cinturino" }
+  ],
+  boatking: [
+    { key: "case", label: "Cassa" },
+    { key: "bezel", label: "Quadrante" },
+    { key: "ring", label: "Ghiera" },
+    { key: "dial", label: "Lancette" },
+    { key: "strap", label: "Cinturino" }
+  ]
 };
 
 const levels = computed(() => levelMap[selectedModel.value]);
-const selectedLevel = ref(levels.value[0]);
+const selectedLevel = ref(levels.value[0].key);
 
 const configuration = ref({});
 
 watch(selectedModel, () => {
-  selectedLevel.value = levels.value[0];
+  selectedLevel.value = levels.value[0].key;
 
   const modelConfig = configurations.value[selectedModel.value];
   const initial = {};
@@ -306,12 +325,12 @@ provide('selectedModel', selectedModel);
       <button :class="{ active: selectedModel === 'boatking' }" @click="setModel('boatking')">BOAT KING</button>
     </div>
     <div class="layers" :style="{ width: settings.layerWidth + 'px', height: settings.layerHeight + 'px' }">
-      <ConfiguratorLayer v-for="(layer, index) in levels" :key="index" :name="layer" />    
+      <ConfiguratorLayer v-for="(layer, index) in levels" :key="index" :name="layer.key" />  
     </div>
     <nav class="navbar">
-      <button v-for="(level, index) in levels" :key="index" @click="selectedLevel = level"
-        :class="{ active: selectedLevel === level }">
-        {{ level.charAt(0).toUpperCase() + level.slice(1) }}
+      <button v-for="(level, index) in levels" :key="index" @click="selectedLevel = level.key"
+        :class="{ active: selectedLevel === level.key }">
+        {{ level.label }}
       </button>
     </nav>
     <div class="controls">
@@ -323,16 +342,7 @@ provide('selectedModel', selectedModel);
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      levels: ["case", "bezel", "ring", "dial", "strap"],
-      selectedLevel: "case"
-    };
-  }
-};
-</script>
+<!-- Removed redundant data() block -->
 
 <style lang="scss" scoped>
 
@@ -516,27 +526,29 @@ h1 {
   min-height: 40px;
 }
 
-.model-selector {
+  .model-selector {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
-
+ 
     button {
       background: none;
-      border: 2px solid white;
       color: white;
-      padding: 0.5rem 1rem;
-      font-size: 1.2rem;
-      font-weight: bold;
+      padding: 0rem 1rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
       cursor: pointer;
-      opacity: 0.6;
+      opacity: 0.5;
       transition: all 0.3s ease-in-out;
+      border: none;
+      box-shadow: none;
+      outline: none;
+      font-family: "Inter", sans-serif;
     }
-
+ 
     button.active {
       opacity: 1;
-      background-color: white;
-      color: #0A001D;
     }
   }
 
