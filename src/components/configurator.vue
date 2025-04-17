@@ -6,7 +6,7 @@ const backgroundColor = ref('#0A001D');
 
 onMounted(() => {
   document.body.style.backgroundColor = backgroundColor.value;
-
+  document.title = "2CW Configurator";
 });
 
 const settings = ref({
