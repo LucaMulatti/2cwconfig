@@ -12,11 +12,17 @@ const settings = inject("settings");
 const configurations = inject("configurations");
 const configuration = inject("configuration");
 
-const images = computed(() => configurations.value[props.name] || []);
+const selectedModel = inject("selectedModel");
+
+const images = computed(() => {
+  return configurations.value[selectedModel.value]?.[props.name] || [];
+});
 
 const selectedIndex = computed(() => {
   return images.value.findIndex(item => item.id === configuration.value[props.name]);
 });
+
+
 </script>
 
 <template>
