@@ -550,6 +550,21 @@ h1 {
     button.active {
       opacity: 1;
     }
+    
+    @media screen and (max-width: 768px) {
+      overflow-x: auto;
+      overflow-y: hidden;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      width: 100%;
+      padding-left: 1rem;
+  
+      button {
+        font-size: 1.5rem;
+        padding: 0.4rem 0.7rem;
+        min-width: max-content;
+      }
+    }
   }
 
 
