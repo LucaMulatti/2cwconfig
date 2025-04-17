@@ -2,7 +2,7 @@
 import { ref, onMounted, provide } from 'vue';
 import ConfiguratorLayer from './configurator-layer.vue';
 
-const backgroundColor = ref('#21002E');
+const backgroundColor = ref('#0A001D');
 
 onMounted(() => {
   document.body.style.backgroundColor = backgroundColor.value;
@@ -17,42 +17,67 @@ const settings = ref({
 
 const configurations = ref({
   case: [
-    { id: 1, src: '/assets/2cw_0029_Cassa1.png' },
-    { id: 2, src: '/assets/2cw_0028_Cassa2.png' }
+    { id: 1, src: '/assets/2cw_0034_Cassa1.png' },
+    { id: 2, src: '/assets/2cw_0033_Cassa2.png' },
+    { id: 3, src: '/assets/2cw_0032_Cassa3.png' },
+    { id: 4, src: '/assets/2cw_0031_Cassa4.png' }
   ],
   ring: [
-    { id: 1, src: '/assets/2cw_0027_Ghiera1.png' },
-    { id: 2, src: '/assets/2cw_0026_Ghiera2.png' },
-    { id: 3, src: '/assets/2cw_0025_Ghiera3.png' },
-    { id: 4, src: '/assets/2cw_0024_Ghiera4.png' },
-    { id: 5, src: '/assets/2cw_0023_Ghiera5.png' },
-    { id: 6, src: '/assets/2cw_0022_Ghiera6.png' },
-    { id: 7, src: '/assets/2cw_0021_Ghiera7.png' },
-    { id: 8, src: '/assets/2cw_0020_Ghiera8.png' },
-    { id: 9, src: '/assets/2cw_0019_Ghiera9.png' },
-    { id: 10, src: '/assets/2cw_0018_Ghiera10.png' },
-    { id: 11, src: '/assets/2cw_0017_Ghiera11.png' },
-    { id: 12, src: '/assets/2cw_0016_Ghiera12.png' },
-    { id: 13, src: '/assets/2cw_0015_Ghiera13.png' },
-    { id: 14, src: '/assets/2cw_0014_Ghiera14.png' },
-    { id: 15, src: '/assets/2cw_0013_Ghiera15.png' }
+    { id: 1, src: '/assets/2cw_0016_Ghiera1.png' },
+    { id: 2, src: '/assets/2cw_0017_Ghiera2.png' },
+    { id: 3, src: '/assets/2cw_0018_Ghiera3.png' },
+    { id: 4, src: '/assets/2cw_0019_Ghiera4.png' },
+    { id: 5, src: '/assets/2cw_0020_Ghiera5.png' },
+    { id: 6, src: '/assets/2cw_0021_Ghiera6.png' },
+    { id: 7, src: '/assets/2cw_0022_Ghiera7.png' },
+    { id: 8, src: '/assets/2cw_0023_Ghiera8.png' },
+    { id: 9, src: '/assets/2cw_0024_Ghiera9.png' },
+    { id: 10, src: '/assets/2cw_0025_Ghiera10.png' },
+    { id: 11, src: '/assets/2cw_0026_Ghiera11.png' },
+    { id: 12, src: '/assets/2cw_0027_Ghiera12.png' },
+    { id: 13, src: '/assets/2cw_0028_Ghiera13.png' },
+    { id: 14, src: '/assets/2cw_0029_Ghiera14.png' },
+    { id: 15, src: '/assets/2cw_0030_Ghiera15.png' }
   ],
   bezel: [
-    { id: 1, src: '/assets/2cw_0012_Quadrante1.png' },
-    { id: 2, src: '/assets/2cw_0011_Quadrante2.png' },
-    { id: 3, src: '/assets/2cw_0010_Quadrante3.png' }
+    { id: 1, src: '/assets/2cw_0015_Quadrante3.png' },
+    { id: 2, src: '/assets/2cw_0014_Quadrante2.png' },
+    { id: 3, src: '/assets/2cw_0013_Quadrante1.png' },
   ],
   dial: [
     { id: 1, src: '/assets/2cw_0009_Lancette1.png' },
-    { id: 2, src: '/assets/2cw_0008_Lancette2.png' },
-    { id: 3, src: '/assets/2cw_0007_Lancette3.png' },
-    { id: 4, src: '/assets/2cw_0006_Lancette4.png' },
-    { id: 5, src: '/assets/2cw_0005_Lancette5.png' },
-    { id: 6, src: '/assets/2cw_0004_Lancette6.png' },
-    { id: 7, src: '/assets/2cw_0003_Lancette7.png' },
-    { id: 8, src: '/assets/2cw_0002_Lancette8.png' },
-    { id: 9, src: '/assets/2cw_0001_Lancette9.png' },
-    { id: 10, src: '/assets/2cw_0000_Lancette10.png' }
+    { id: 2, src: '/assets/2cw_0008_Lancette9.png' },
+    { id: 3, src: '/assets/2cw_0007_Lancette8.png' },
+    { id: 4, src: '/assets/2cw_0006_Lancette7.png' },
+    { id: 5, src: '/assets/2cw_0005_Lancette6.png' },
+    { id: 6, src: '/assets/2cw_0004_Lancette5.png' },
+    { id: 7, src: '/assets/2cw_0003_Lancette4.png' },
+    { id: 8, src: '/assets/2cw_0002_Lancette3.png' },
+    { id: 9, src: '/assets/2cw_0001_Lancette10.png' },
+    { id: 10, src: '/assets/2cw_0010_Lancette11.png' },
+    { id: 11, src: '/assets/2cw_0011_Lancette12.png' },
+    { id: 12, src: '/assets/2cw_0012_Lancette2.png' }
+  ],
+  strap: [
+    { id: 1, src: '/assets/2cw_0054_Cinturino1.png' },
+    { id: 2, src: '/assets/2cw_0055_Cinturino2.png' },
+    { id: 3, src: '/assets/2cw_0048_Cinturino3.png' },
+    { id: 4, src: '/assets/2cw_0050_Cinturino4.png' },
+    { id: 5, src: '/assets/2cw_0044_Cinturino5.png' },
+    { id: 6, src: '/assets/2cw_0052_Cinturino6.png' },
+    { id: 7, src: '/assets/2cw_0046_Cinturino7.png' },
+    { id: 8, src: '/assets/2cw_0051_Cinturino8.png' },
+    { id: 9, src: '/assets/2cw_0043_Cinturino9.png' },
+    { id: 10, src: '/assets/2cw_0053_Cinturino10.png' },
+    { id: 11, src: '/assets/2cw_0045_Cinturino11.png' },
+    { id: 12, src: '/assets/2cw_0049_Cinturino12.png' },
+    { id: 13, src: '/assets/2cw_0047_Cinturino13.png' },
+    { id: 14, src: '/assets/2cw_0041_Cinturino14.png' },
+    { id: 15, src: '/assets/2cw_0035_Cinturino15.png' },
+    { id: 16, src: '/assets/2cw_0036_Cinturino16.png' },
+    { id: 17, src: '/assets/2cw_0042_Cinturino17.png' },
+    { id: 18, src: '/assets/2cw_0037_Cinturino18.png' },
+    { id: 19, src: '/assets/2cw_0038_Cinturino19.png' }
   ]
 });
 
@@ -60,7 +85,8 @@ const configuration = ref({
   case: configurations.value.case[0]?.id || null,
   ring: configurations.value.ring[0]?.id || null,
   bezel: configurations.value.bezel[0]?.id || null,
-  dial: configurations.value.dial[0]?.id || null
+  dial: configurations.value.dial[0]?.id || null,
+  strap: configurations.value.strap[0]?.id || null,
 });
 
 const setLayer = (layer, direction) => {
@@ -92,16 +118,16 @@ provide('configuration', configuration);
     <img src="/assets/logo.svg" alt="Logo" class="logo" />
     <h1>SEASUB</h1>
     <div class="layers" :style="{ width: settings.layerWidth + 'px', height: settings.layerHeight + 'px' }">
-      <img src="/assets/Glow.png" alt="Logo" class="glow" />
       <ConfiguratorLayer name="case" />    
       <ConfiguratorLayer name="bezel" />
       <ConfiguratorLayer name="ring" />  
       <ConfiguratorLayer name="dial" />
+      <ConfiguratorLayer name="strap" />
     </div>
     <nav class="navbar">
       <button v-for="(level, index) in levels" :key="index" @click="selectedLevel = level"
         :class="{ active: selectedLevel === level }">
-        {{ ['Cassa', 'Quadrante', 'Ghiera', 'Lancette'][index] }}
+        {{ ['Cassa', 'Quadrante', 'Ghiera', 'Lancette', 'Cinturino'][index] }}
       </button>
     </nav>
     <div class="controls">
@@ -117,7 +143,7 @@ provide('configuration', configuration);
 export default {
   data() {
     return {
-      levels: ["case", "bezel", "ring", "dial"],
+      levels: ["case", "bezel", "ring", "dial", "strap"],
       selectedLevel: "case"
     };
   }
@@ -167,18 +193,6 @@ h1 {
   @media screen and (max-width: 480px) {
     width: 100px;
   }
-}
-
-.glow {
-  object-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 450px;
-  height: 450px;
-  object-fit: cover;
-  z-index: 0;
-  padding-right: 4rem;
 }
 
 .configurator {
