@@ -558,11 +558,16 @@ h1 {
       white-space: nowrap;
       width: 100%;
       padding-left: 1rem;
+      padding-right: 1rem;
   
       button {
         font-size: 1.5rem;
         padding: 0.4rem 0.7rem;
         min-width: max-content;
+      }
+      
+      &::-webkit-scrollbar {
+        display: none;
       }
     }
   }
