@@ -2,7 +2,7 @@
 import { ref, onMounted, provide, computed, watch } from 'vue';
 import ConfiguratorLayer from './configurator-layer.vue';
 
-const backgroundColor = ref('#0A001D');
+const backgroundColor = ref('#0f0f0f');
 
 onMounted(() => {
   document.body.style.backgroundColor = backgroundColor.value;
@@ -382,10 +382,12 @@ h1 {
     width: 125px;
     padding-right: 0rem;
     margin-bottom: 10px;
+    margin-top: 0;
   }
 
   @media screen and (max-width: 480px) {
     width: 100px;
+    margin-top: 0;
   }
 }
 
