@@ -132,6 +132,7 @@ const configurations = ref({
       { id: 1, src: '/assets/2cw_0015_Quadrante3.png' },
       { id: 2, src: '/assets/2cw_0014_Quadrante2.png' },
       { id: 3, src: '/assets/2cw_0013_Quadrante1.png' },
+      { id: 4, src: '/assets/2cw_0015_Quadrante4.png' }
     ],
     dial: [
       { id: 1, src: '/assets/2cw_0001_LancetteGMT1.png' },
